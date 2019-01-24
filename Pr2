@@ -1,0 +1,27 @@
+Задание 2
+Запрос производился к сайту http://wikipedia.org
+
+
+Запрос
+open ru.wikipedia.org 80                    \\Через telnet отправила запрос к странице ru.wikipedia.org по порту 80 и отправляем HTTP запрос
+
+GET /wiki/ HTTP/1.1                          \\Осуществили GET запрос по протоколу HTTP версии 1.1
+Host: ru.wikipedia.org                       \\Доменное имя хоста запрашиваемого ресурса.
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; ru; rv:1.9b5) Gecko/2008050509 Firefox/3.0b5       \\Указание программного обеспечения клиента и его характеристики
+Accept: text/html                            \\Список допустимых форматов контента для ответа на запрос,здесь ожидается получение html страницы
+Connection: close                            \\Описывает поведение соединения, close указывает на то, что соединение должно быть закрыто после ответа
+
+
+Ответ
+HTTP/1.1 301 TLS Redirect                    \\Код 301 указывает на то, что ресурс теперь можно найти по другому URL адресу
+Date: Thu, 22 Nov 2018 11:02:16 GMT          \\Дата, когда был сформирован ответ
+Server: Varnish                              \\Информация о сервере
+X-Varnish: 3451333331
+X-Cache: cp3041 int
+X-Cache-Status: int-front
+Set-Cookie: WMF-Last-Access=22-Nov-2018;Path=/;HttpOnly;secure;Expires=Sat, 22 Dec 2018 12:00:00 GMT
+Set-Cookie: WMF-Last-Access-Global=22-Nov-2018;Path=/;Domain=.wikipedia.org;HttpOnly;secure;Expires=Sat, 22 Dec 2018 12:00:00 GMT
+X-Client-IP: 178.46.120.5
+Location: https://ru.wikipedia.org/wiki/страница                        \\Адрес перенаправления
+Content-Length: 0                            \\Число байт в теле ответа, здесь 0 поскольку клиенту отправляется просто запрос на редирект
+Connection: close                            \\Описывает поведение соединения, close указывает на то, что соединение должно быть закрыто после ответа
